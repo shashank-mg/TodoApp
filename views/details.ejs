@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+
+<body>
+    <div>
+        <p class="taskDescription">
+            <% if(result){ %>
+        <h1 class="h3"><%= result.name %></h1>
+        <input type="button" data-doc='<%= result._id%>' id='delete' value="delete">
+        <hr>
+        <%= result.task_details %>
+        <% }else{ %>
+        <h5>Data Deleted!!</h5>
+        <% } %>
+        </p>
+    </div>
+</body>
+<script>
+    const button = document.querySelector('input')
+    button.addEventListener('click', () => {
+        const endpoint = `/details/${button.dataset.doc}`
+        fetch(endpoint, { method: 'delete' }).then((res) => res.json())
+            .then((res) => window.location.assign(`http://localhost:3000${res.redirect}`))
+            .catch(e => console.log(e))
+    })
+</script>
+
+</html>

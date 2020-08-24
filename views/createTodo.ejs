@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<h1 class='h1c'>Create A Todo</h1>
+
+<body>
+    <div class='container'>
+        <div class='creatediv'>
+            <form action="/home" method="post" id="form1">
+                <label for="task">Task Name</label><br>
+                <input type="text" name="name" id="taskdetails"><br>
+                <label for="description">Task Description</label><br>
+                <input type="text" name="task_details" id='taskdescription'><br>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    const taskName = document.querySelector("#taskdetails")
+    const taskDescription = document.querySelector('#taskdescription')
+    const form = document.getElementById('form1')
+    const submit = document.querySelector('input[type="submit"]')
+
+</script>
+
+</html>
